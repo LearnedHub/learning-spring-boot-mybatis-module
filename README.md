@@ -1,5 +1,7 @@
 ## learning spring boot mybatis
 
+⚠️  [TODO]package后无法独立启动
+
 - 整合通用mapper
 - 使用druid数据源，加密数据库密码
 - 使用mbg自动生成mapper和bean
