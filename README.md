@@ -4,12 +4,12 @@
 > 原因: spring-boot-maven-plugin应该配置在web module下。配置在parent的pom中，导致各个module都按照spring-boot来打包。
 > sprint-boot打包格式如下
 
-`
+```bash
 .
 ├── BOOT-INF # 应用相关的class和libs
 ├── META-INF
 └── org # spring相关libs
-`
+```
 
 > 都按照sping-boot来打包，那么其他module的jar都会放到BOOT-INF下，致使找不到对应的class。
 
