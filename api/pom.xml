@@ -16,6 +16,7 @@
         <mapper.starter.version>2.1.5</mapper.starter.version>
         <pagehelper.starter.version>1.2.5</pagehelper.starter.version>
     </properties>
+
     <dependencies>
         <!--common mapper-->
         <dependency>
