@@ -19,6 +19,8 @@
 
 > 都按照sping-boot来打包，那么其他module的jar都会放到BOOT-INF下，致使找不到对应的class。
 
+### Implemented functions
+
 - 整合通用mapper
 - 使用druid数据源，加密数据库密码
 - 使用mbg自动生成mapper和bean
