@@ -1,6 +1,7 @@
 package cn.zhucongqi.exception;
 
-import com.alibaba.fastjson.JSON;
+import cn.zhucongqi.utils.JacksonUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -15,6 +16,13 @@ import org.springframework.web.servlet.NoHandlerFoundException;
  */
 @RestControllerAdvice
 public class CacheExceptionHandler {
+
+    private final JacksonUtil jacksonUtil;
+
+    @Autowired
+    public CacheExceptionHandler(JacksonUtil jacksonUtil) {
+        this.jacksonUtil = jacksonUtil;
+    }
 
     private class Error {
         private String ec;
@@ -43,7 +51,7 @@ public class CacheExceptionHandler {
 
         @Override
         public String toString() {
-            return JSON.toJSONString(this);
+            return CacheExceptionHandler.this.jacksonUtil.toJson(this);
         }
     }
 
