@@ -1,5 +1,10 @@
 ## learning spring boot mybatis module
 
+### 2019.12.19更新
+- 加入ssl，同时支持http和https，对一个端口为8081，和8443，都在application.properties中配置。
+- 设置http端口在在persistence的module的application-dev.properties中配置了一个server.http.port，这个信息为自定义信息。
+- 在TomcatHttpConnector中定义了一个httpPort属性，并使用@Value("${server.http.port}")与application-dev.properties中的配置关联。
+
 ⚠️  修复package后无法独立启动：找不到UserRepository
 > 原因: spring-boot-maven-plugin应该配置在web module下。配置在parent的pom中，导致各个module都按照spring-boot来打包。
 > sprint-boot打包格式如下
