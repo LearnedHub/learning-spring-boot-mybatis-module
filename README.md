@@ -9,7 +9,7 @@
 $ java -Dloader.path="lib/" -jar web-0.0.1-SNAPSHOT.jar
 ```
 
-OR
+OR，需配置 `<executable>true</executable>`
 
 ```bash
 $ ./web-0.0.1-SNAPSHOT.jar
