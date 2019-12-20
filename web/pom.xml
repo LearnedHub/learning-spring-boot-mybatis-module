@@ -25,41 +25,10 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <useUniqueVersions>false</useUniqueVersions>
-                            <mainClass>cn.zhucongqi.LearningSpringBootMybatisApplication</mainClass>
-                        </manifest>
-                    </archive>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>cn.zhucongqi.LearningSpringBootMybatisApplication</mainClass>
-                    <!-- <executable>true</executable> -->
-                    <includes>
-                        <!-- just include self -->
-                        <include>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${artifactId}</artifactId>
-                        </include>
-                    </includes>
-                    <layout>ZIP</layout>
-                    <addResources>true</addResources>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -68,24 +37,46 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <!-- The following enables the "thin jar" deployment option. -->
+                    <dependency>
+                        <groupId>org.springframework.boot.experimental</groupId>
+                        <artifactId>spring-boot-thin-layout</artifactId>
+                        <version>1.0.22.RELEASE</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <groupId>org.springframework.boot.experimental</groupId>
+                <artifactId>spring-boot-thin-maven-plugin</artifactId>
+                <version>1.0.23.RELEASE</version>
                 <executions>
                     <execution>
-                        <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
+                        <id>resolve</id>
                         <goals>
-                            <goal>copy-dependencies</goal>
+                            <goal>resolve</goal>
                         </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                            <includeScope>runtime</includeScope>
-                        </configuration>
+                        <inherited>false</inherited>
                     </execution>
                 </executions>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-dependency-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>copy-dependencies</id>-->
+<!--                        <phase>prepare-package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>copy-dependencies</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <outputDirectory>${project.build.directory}/lib</outputDirectory>-->
+<!--                            <includeScope>runtime</includeScope>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
