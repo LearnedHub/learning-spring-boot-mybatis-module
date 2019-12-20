@@ -38,7 +38,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                             <useUniqueVersions>false</useUniqueVersions>
-                            <mainClass>com.XProApplication</mainClass>
+                            <mainClass>cn.zhucongqi.LearningSpringBootMybatisApplication</mainClass>
                         </manifest>
                     </archive>
                     <outputDirectory>${project.build.directory}</outputDirectory>
@@ -49,7 +49,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>cn.zhucongqi.LearningSpringBootMybatisApplication</mainClass>
-                    <executable>true</executable>
+                    <!-- <executable>true</executable> -->
                     <includes>
                         <!-- just include self -->
                         <include>

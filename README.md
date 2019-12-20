@@ -15,6 +15,8 @@ OR
 $ ./web-0.0.1-SNAPSHOT.jar
 ```
 
+⚠️ 使用 `<executable>true</executable>` 可能无法用zip工具查看其内部内容。
+
 ### 2019.12.19更新
 - 加入ssl，同时支持http和https，对一个端口为8081，和8443，都在application.properties中配置。
 - 设置http端口在在persistence的module的application-dev.properties中配置了一个server.http.port，这个信息为自定义信息。
