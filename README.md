@@ -2,7 +2,7 @@
 
 ### 2019.12.20
 - 从http自动跳转到https
-- thin jar:主要在[pom.xml](web/pom.xml)的配置(使用spring-boot-thin-layout一直失败[TODO])
+- thin jar:主要在[pom.xml](web/pom.xml)的配置(使用spring-boot-thin-layout查看thin-jar分支)
 - how to run?
 
 ```bash
