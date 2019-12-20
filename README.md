@@ -2,18 +2,12 @@
 
 ### 2019.12.20
 - 从http自动跳转到https
-- thin jar:主要在[pom.xml](web/pom.xml)的配置(使用spring-boot-thin-layout一直失败[TODO])
+- thin jar:使用spring-boot-thin-layout
+
+> 之前测试一直失败，使用的1.0.22.RELEASE不确定是不是因为有bug，一直找不到ThinJarLauncher。更换1.0.23.RELEASE之后就可以了。
+
 - how to run?
-
-```bash
-$ java -Dloader.path="lib/" -jar web-0.0.1-SNAPSHOT.jar
-```
-
-OR，需配置 `<executable>true</executable>`
-
-```bash
-$ ./web-0.0.1-SNAPSHOT.jar
-```
+与正常的springboot fat jar其他方式一样 `java -jar web-0.0.1-SNAPSHOT.jar`，如果启动很慢，那是因为thin-launcher在后台下载依赖包。
 
 ⚠️ 使用 `<executable>true</executable>` 可能无法用zip工具查看其内部内容。
 

@@ -6,10 +6,15 @@
         <artifactId>learning-spring-boot-mybatis</artifactId>
         <groupId>cn.zhucongqi</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>web</artifactId>
+
+    <properties>
+        <thin.version>1.0.23.RELEASE</thin.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -42,41 +47,10 @@
                     <dependency>
                         <groupId>org.springframework.boot.experimental</groupId>
                         <artifactId>spring-boot-thin-layout</artifactId>
-                        <version>1.0.22.RELEASE</version>
+                        <version>${thin.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot.experimental</groupId>
-                <artifactId>spring-boot-thin-maven-plugin</artifactId>
-                <version>1.0.23.RELEASE</version>
-                <executions>
-                    <execution>
-                        <id>resolve</id>
-                        <goals>
-                            <goal>resolve</goal>
-                        </goals>
-                        <inherited>false</inherited>
-                    </execution>
-                </executions>
-            </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-dependency-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>copy-dependencies</id>-->
-<!--                        <phase>prepare-package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>copy-dependencies</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <outputDirectory>${project.build.directory}/lib</outputDirectory>-->
-<!--                            <includeScope>runtime</includeScope>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
         </plugins>
     </build>
 </project>
