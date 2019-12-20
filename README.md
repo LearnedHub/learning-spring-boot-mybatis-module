@@ -2,7 +2,18 @@
 
 ### 2019.12.20
 - 从http自动跳转到https
-- [TODO] thin jar
+- thin jar:主要在[pom.xml](web/pom.xml)的配置(使用spring-boot-thin-layout一直失败[TODO])
+- how to run?
+
+```bash
+$ java -Dloader.path="lib/" -jar web-0.0.1-SNAPSHOT.jar
+```
+
+OR
+
+```bash
+$ ./web-0.0.1-SNAPSHOT.jar
+```
 
 ### 2019.12.19更新
 - 加入ssl，同时支持http和https，对一个端口为8081，和8443，都在application.properties中配置。
