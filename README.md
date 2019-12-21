@@ -1,5 +1,8 @@
 ## Learning SpringBoot2 LTS
 
+### 2019.12.21
+- 添加redis
+
 ### 2019.12.20
 - 从http自动跳转到https
 - thin jar:使用spring-boot-thin-layout
