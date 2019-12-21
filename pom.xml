@@ -8,6 +8,7 @@
         <module>learning-springboot2-persistence</module>
         <module>learning-springboot2-web</module>
         <module>learning-springboot2-utils</module>
+        <module>learning-springboot2-redis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -52,6 +53,11 @@
             <dependency>
                 <groupId>cn.zhucongqi</groupId>
                 <artifactId>learning-springboot2-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zhucongqi</groupId>
+                <artifactId>learning-springboot2-redis</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
