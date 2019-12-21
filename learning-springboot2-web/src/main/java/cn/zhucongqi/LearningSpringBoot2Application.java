@@ -6,10 +6,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 @MapperScan(basePackages = "cn.zhucongqi.mapper")
-public class LearningSpringBootMybatisApplication {
+public class LearningSpringBoot2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(LearningSpringBootMybatisApplication.class, args);
+        SpringApplication.run(LearningSpringBoot2Application.class, args);
     }
 
 }
