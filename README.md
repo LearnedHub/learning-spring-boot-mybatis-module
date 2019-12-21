@@ -1,4 +1,4 @@
-## learning spring boot mybatis module
+## Learning SpringBoot2 LTS
 
 ### 2019.12.20
 - 从http自动跳转到https
