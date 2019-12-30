@@ -4,6 +4,7 @@ import cn.zhucongqi.domain.MallUser;
 import cn.zhucongqi.mapper.x.MallUserMapperX;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,5 +36,10 @@ public class UserRepository {
 
     public List<MallUser> getAllUsers() {
         return this.mallUserMapper.selectAll();
+    }
+
+    @Transactional
+    public int saveUser(MallUser user) {
+        return this.mallUserMapper.insert(user);
     }
 }

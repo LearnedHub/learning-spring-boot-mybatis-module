@@ -3,6 +3,8 @@ package cn.zhucongqi.controller;
 import cn.zhucongqi.domain.MallUser;
 import cn.zhucongqi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,5 +54,20 @@ public class UserController {
     public MallUser userx(@PathVariable Integer userId) {
         MallUser user = this.userRepository.getUser(userId);
         return user != null ? user : new MallUser();
+    }
+
+    @GetMapping("/adduser")
+    public MallUser addUser() {
+        MallUser user = new MallUser();
+        user.setAddr("add");
+        user.setName("username");
+        user.setVersion(1);
+        this.userRepository.saveUser(user);
+
+        user.setId(null);
+        user.setName("newuser");
+        user.setAddr("123");
+        this.userRepository.saveUser(user);
+        return user;
     }
 }
